@@ -7,10 +7,9 @@ function Searchbar({ weatherData }) {
     setLocation(e.target.value);
   };
 
-  const APIBase = process.env.REACT_APP_API_BASE_URL || "f2f43a7d0f74d4c23683e77418e885fc";
-  const APIKey = process.env.REACT_APP_API_KEY || "https://api.openweathermap.org/data/2.5/";
-  console.log(`${APIBase}weather?q=${location}&units=metric&APPID=${APIKey}`);
-
+  const APIBase = process.env.REACT_APP_API_BASE_URL;
+  const APIKey = process.env.REACT_APP_API_KEY;
+  
   const search = (e) => {
     if (e.key === 'Enter') {
       fetch(`${APIBase}weather?q=${location}&units=metric&APPID=${APIKey}`)
